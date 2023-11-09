@@ -55,16 +55,57 @@ D7 = X Y Z
 ## Figure -04 8 to 3 Decoder implementation 
 
 ### Procedure
-/* write all the steps invloved */
+
+Step1:create module encoder and decoder.
+
+Step-2:Get inputs and outputs for encoders and decoders.
+
+Step-3:perform or operation for encoder and and logic for decoders.
+
+Step-4:perform RTL LOGIC and get waveform.
+
+Step-5:End the module.
 
 
 
 ### PROGRAM 
-/*
+
 Program for Endocers and Decoders  and verify its truth table in quartus using Verilog programming.
-Developed by: 
-RegisterNumber:  
-*/
+
+Developed by: V.S.JANANI
+
+RegisterNumber:  212222230050
+# Encoder:
+```
+module enc(a0,a1,a2,y0,y1,y2,y3,y4,y5,y6,y7);
+input y0,y1,y2,y3,y4,y5,y6,y7;
+output a0,a1,a2;
+or(a0,y7,y5,y3,y1);
+or(a1,y7,y6,y3,y2);
+or(a2,y7,y6,y5,y4);
+endmodule
+```
+# Decoder:
+```
+module dec (a0,a1,a2,y0,y1,y2,y3,y4,y5,y6,y7);
+input a0,a1,a2;
+output y0,y1,y2,y3,y4,y5,y6,y7;
+wire a0bar,a1bar,a2bar;
+not(a0bar,a0);
+not(a1bar,a1);
+not(a2bar,a2);
+and(y0,a0bar,a1bar,a2bar);
+and(y1,a0,a1bar,a2bar);
+and(y2,a0bar,a1,a2bar);
+and(y3,a0,a1,a2bar);
+and(y4,a0bar,a1bar,a2);
+and(y5,a0,a1bar,a2);
+and(y6,a0bar,a1,a2);
+and(y7,a0,a1,a2);
+endmodule
+```
+
+
 
 
 
@@ -72,6 +113,13 @@ RegisterNumber:
 
 
 ### RTL LOGIC  
+For Encoder:
+![image](https://github.com/janani225/Experiment-08-Encoders-and-decoders-/assets/113497333/36f62a75-7521-4faf-9d09-2d60d8513b92)
+
+For Decoder:
+![image](https://github.com/janani225/Experiment-08-Encoders-and-decoders-/assets/113497333/5ef8c3e4-724c-48b5-af0b-64c106e3817d)
+
+
 
 
 
@@ -82,15 +130,28 @@ RegisterNumber:
 
 ### TIMING DIGRAMS  
 
+Encoder:
 
+![image](https://github.com/janani225/Experiment-08-Encoders-and-decoders-/assets/113497333/a5ee4d1b-5586-4beb-b822-b21524469c6c)
+
+Decoder:
+
+![image](https://github.com/janani225/Experiment-08-Encoders-and-decoders-/assets/113497333/ce5bc10a-4b34-4dfe-84ba-2496d85c1103)
 
 
 
 ### TRUTH TABLE 
+ENCODER:
 
+![image](https://github.com/janani225/Experiment-08-Encoders-and-decoders-/assets/113497333/063b22c9-3f72-4a35-b162-8428ecdff0fa)
+
+DECODER:
+
+![image](https://github.com/janani225/Experiment-08-Encoders-and-decoders-/assets/113497333/118853d1-302e-44b9-ad28-c4dbbfefe001)
 
 
 
 
 
 ### RESULTS 
+Thus the program to design encoder and decoder is successfully completed.
